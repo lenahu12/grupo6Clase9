@@ -25,5 +25,13 @@ jobs:
 
       - name: Ejecutar pruebas
         run: |
+          echo "Directorio actual:"
+          pwd
+          echo "Contenido:"
+          ls -R
+          
+          # Agregamos la carpeta raíz al PYTHONPATH
           export PYTHONPATH=$PYTHONPATH:$(pwd)
+          echo "PYTHONPATH: $PYTHONPATH"
+
           pytest -v
